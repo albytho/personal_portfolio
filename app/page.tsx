@@ -1,101 +1,146 @@
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+        {/* Introduction Section */}
+        <section className="text-center sm:text-left">
+          <h1 className="text-2xl font-bold">Hello there, my name is:</h1>
+          <h1 className="text-6xl font-bold mt-2">Alby Thomas</h1>
+          <p className="mt-4">I'm a NYC based software engineer with +5 years of experience and a passion for product engineering.</p>
+        </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <Separator className="my-4" />
+
+        {/* About Me Section */}
+        <section className="text-center sm:text-left mt-8 w-full">
+          <h2 className="text-xl font-bold">About Me</h2>
+          <div className="mt-4 flex flex-col sm:flex-row gap-8 items-center">
+            <p className="flex-1">
+              I grew up in Michigan and even went on to study computer science at the University of Michigan, Ann Arbor. After graduating, I've worked at a variety of companies ranging from series A startups to "Big Tech". I'm currently working at Nourish as a Senior Software Engineer.
+            </p>
             <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/profile.png"  // Add your image to the public folder
+              alt="Alby Thomas"
+              width={300}
+              height={300}
+              className="rounded-full"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+          </div>
+        </section>
+
+        <Separator className="my-4" />
+
+        {/* Where I've Worked Section */}
+        <section className="text-center sm:text-left mt-8">
+          <h2 className="text-xl font-bold">Where I've Worked</h2>
+          <div className="mt-4">
+            <Card>
+              <CardHeader>
+                <CardTitle>Nourish</CardTitle>
+                <CardDescription>2025 - Current</CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+          <div className="mt-4">
+            <Card>
+              <CardHeader className="flex flex-row items-center gap-4">
+                <Image
+                  src="/grubhub-logo.png"  // Add this logo to your public folder
+                  alt="Grubhub logo"
+                  width={50}
+                  height={50}
+                  className="object-contain"
+                />
+                <div>
+                  <CardTitle>Grubhub (Acquired by Wonder 🤷🏾‍♂️)</CardTitle>
+                  <CardDescription>2024 - 2025</CardDescription>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc list-inside mt-2">
+                  <li>Led the payments platform team in a security hardening initiative to protect Grubhub from card testing attacks.</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="mt-4">
+            <Card>
+              <CardHeader className="flex flex-row items-center gap-4">
+                <Image
+                  src="/valon-logo.png" 
+                  alt="Valon logo"
+                  width={50}
+                  height={50}
+                  className="object-contain"
+                />
+                <div>
+                  <CardTitle>Valon</CardTitle>
+                  <CardDescription>2022 - 2024</CardDescription>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc list-inside mt-2">
+                  <li>Led the credit reporting infrastructure project and introduced bulk editing features which enhanced system scalability and reduced eng involvement by 95%.</li>
+                  <li>Took ownership of the company’s bulk invoice system by devising comprehensive test cases and implementing missing functionalities that reduced the operation team’s data entry time by 70%.</li>
+                  <li>Simplified monthly investor portfolio onboarding process by condensing several manual operations into singular API calls which were made accessible to the operations team through a retool, reducing portfolio setup from 1 hour to 1 minute.</li>
+                  <li>Owned multiple investor reports and their automated generation to inform clients on loan level activity across all their portfolios.</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="mt-4">
+            <Card>
+              <CardHeader className="flex flex-row items-center gap-4">
+                <Image
+                  src="/capsule-logo.png" 
+                  alt="Capsule logo"
+                  width={50}
+                  height={50}
+                  className="object-contain"
+                />
+                <div>
+                  <CardTitle>Capsule</CardTitle>
+                  <CardDescription>2021 - 2022</CardDescription>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc list-inside mt-2">
+                  <li>Led the development of a daily patient adherence calculator that aggregates prescription data across various healthcare partners and computes prescription compliance for over 50,000 patients.</li>
+                  <li>Directed the back-end development efforts of Capsule’s Rx status bar by creating a microservice that subscribes to prescription status updates through an outbox pattern and allows customers to know real-time updates on their prescriptions.</li>
+                  <li>Spearheaded the integration of AWS Canaries onto existing systems with high traffic to better monitor the health and latency of endpoints and web pages.</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+          <div className="mt-4">
+            <Card>
+              <CardHeader className="flex flex-row items-center gap-4">
+                <Image
+                  src="/jpmorganchase-logo.jpg" 
+                  alt="JPMorgan Chase & Co. logo"
+                  width={50}
+                  height={50}
+                  className="object-contain"
+                />
+                <div>
+                  <CardTitle>JPMorgan Chase & Co.</CardTitle>
+                  <CardDescription>2021 - 2022</CardDescription>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <ul className="list-disc list-inside mt-2">
+                  <li>Prevented defects from getting introduced to the Chase website and mobile app by developing code that enhances the firm’s functional UI testing framework.</li>
+                  <li>Developed an Angular and Java Spring based web dashboard used by over 300 engineers to quickly review the results of their functional UI tests and identify risks.</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
