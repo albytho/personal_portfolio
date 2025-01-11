@@ -39,9 +39,18 @@ export default function Home() {
           <h2 className="text-xl font-bold">Where I&apos;ve Worked</h2>
           <div className="mt-4">
             <Card>
-              <CardHeader>
-                <CardTitle>Nourish</CardTitle>
-                <CardDescription>2025 - Current</CardDescription>
+              <CardHeader className="flex flex-row items-center gap-4">
+                <Image
+                  src="/nourish-logo.jpg" 
+                  alt="Nourish logo"
+                  width={50}
+                  height={50}
+                  className="object-contain"
+                />
+                <div>
+                  <CardTitle>Nourish</CardTitle>
+                  <CardDescription>2025 - Current</CardDescription>
+                </div>
               </CardHeader>
             </Card>
           </div>
