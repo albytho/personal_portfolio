@@ -20,7 +20,7 @@ export default function Home() {
           <h2 className="text-xl font-bold">About Me</h2>
           <div className="mt-4 flex flex-col sm:flex-row gap-8 items-center">
             <p className="flex-1">
-              I grew up in Michigan and even went on to study computer science at the University of Michigan, Ann Arbor. After graduating, I&apos;ve worked at a variety of companies ranging from series A startups to &quot;Big Tech&quot;. I&apos;m currently working at Nourish as a Senior Software Engineer.
+              I grew up in Michigan and pursued my passion for technology by studying Computer Science at the University of Michigan, Ann Arbor. Since graduating, I&apos;ve had the opportunity to work at a diverse range of companies, from innovative Series A startups to established leaders in Big Tech. Currently, I&apos;m proud to be contributing as a Senior Software Engineer at Nourish.
             </p>
             <Image
               src="/profile.png"  // Add your image to the public folder
